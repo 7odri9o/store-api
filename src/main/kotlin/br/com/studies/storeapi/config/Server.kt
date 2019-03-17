@@ -21,8 +21,7 @@ class Server : KoinComponent {
 
         return Javalin.create()
             .also { app ->
-                app.enableCorsForAllOrigins()
-                    .contextPath(getProperty("context"))
+                app.contextPath(getProperty("context"))
                 routes.register(app)
                 app.port(getProperty("server_port"))
             }
