@@ -1,5 +1,7 @@
 package br.com.studies.storeapi
 
+import br.com.studies.storeapi.config.Server
+
 fun main(args: Array<String>) {
-    println("Store API")
+    Server().setup().start()
 }

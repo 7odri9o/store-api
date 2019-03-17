@@ -5,17 +5,33 @@ plugins {
 group 'br.com.studies'
 version '1.0-SNAPSHOT'
 
+// VARIABLES VERSIONS
+ext.javalinVersion = '2.7.0'
+ext.koinCoreVersion = '1.0.2'
+ext.jvmTargetVersion = '1.8'
+ext.slf4jSimple = '1.7.25'
+
 repositories {
+    jcenter()
     mavenCentral()
 }
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+
+    // REST framework
+    compile "io.javalin:javalin:${javalinVersion}"
+
+    // Dependency Injection
+    compile "org.koin:koin-core:${koinCoreVersion}"
+
+    // Logging
+    compile "org.slf4j:slf4j-simple:${slf4jSimple}"
 }
 
 compileKotlin {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = "${jvmTargetVersion}"
 }
 compileTestKotlin {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = "${jvmTargetVersion}"
 }
