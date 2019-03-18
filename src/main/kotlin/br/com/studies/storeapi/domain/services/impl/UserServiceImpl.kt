@@ -2,6 +2,7 @@ package br.com.studies.storeapi.domain.services.impl
 
 import br.com.studies.storeapi.domain.dto.User
 import br.com.studies.storeapi.domain.services.UserService
+import br.com.studies.storeapi.resources.entities.revert
 import br.com.studies.storeapi.resources.repositories.UserRepository
 import br.com.studies.storeapi.web.controllers.dto.ErrorResponse
 import br.com.studies.storeapi.web.controllers.dto.Response
@@ -24,9 +25,7 @@ class UserServiceImpl(
                 )
             } else {
                 statusCode = HttpStatus.OK_200
-                data = User(
-                    email = email
-                )
+                data = it.revert()
             }
         }
         return statusCode to Response(

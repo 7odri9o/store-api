@@ -14,6 +14,7 @@ ext.jacksonDatabindVersion = '2.9.8'
 ext.exposedVersion = '0.12.2'
 ext.h2DatabaseVersion = '1.4.199'
 ext.hikariCPVersion = '3.3.1'
+ext.jacksonModuleKotlinVersion = '2.9.8'
 
 repositories {
     jcenter()
@@ -34,6 +35,7 @@ dependencies {
 
     // Data Format and Conversion
     compile "com.fasterxml.jackson.core:jackson-databind:${jacksonDatabindVersion}"
+    compile "com.fasterxml.jackson.module:jackson-module-kotlin:${jacksonModuleKotlinVersion}"
 
     // Persistence and ORM
     compile "org.jetbrains.exposed:exposed:${exposedVersion}"

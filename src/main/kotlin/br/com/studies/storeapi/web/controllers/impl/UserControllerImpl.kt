@@ -2,14 +2,16 @@ package br.com.studies.storeapi.web.controllers.impl
 
 import br.com.studies.storeapi.domain.services.UserService
 import br.com.studies.storeapi.web.controllers.UserController
+import br.com.studies.storeapi.web.controllers.dto.UserDTO
 import io.javalin.Context
+import org.eclipse.jetty.http.HttpStatus
 
 class UserControllerImpl(
     private val userService: UserService
 ) : UserController {
 
     override fun register(ctx: Context) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        ctx.json(ctx.body<UserDTO>()).status(HttpStatus.CREATED_201)
     }
 
     override fun isAlreadyUser(ctx: Context) {

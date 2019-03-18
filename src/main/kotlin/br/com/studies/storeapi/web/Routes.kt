@@ -2,8 +2,7 @@ package br.com.studies.storeapi.web
 
 import br.com.studies.storeapi.web.controllers.UserController
 import io.javalin.Javalin
-import io.javalin.apibuilder.ApiBuilder.get
-import io.javalin.apibuilder.ApiBuilder.path
+import io.javalin.apibuilder.ApiBuilder.*
 import org.koin.standalone.KoinComponent
 
 class Routes(
@@ -14,6 +13,9 @@ class Routes(
         app.routes {
             path("verify") {
                 get(userController::isAlreadyUser)
+            }
+            path("users") {
+                post(userController::register)
             }
         }
     }
