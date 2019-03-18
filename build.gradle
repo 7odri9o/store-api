@@ -11,6 +11,9 @@ ext.koinCoreVersion = '1.0.2'
 ext.jvmTargetVersion = '1.8'
 ext.slf4jSimpleVersion = '1.7.25'
 ext.jacksonDatabindVersion = '2.9.8'
+ext.exposedVersion = '0.12.2'
+ext.h2DatabaseVersion = '1.4.199'
+ext.hikariCPVersion = '3.3.1'
 
 repositories {
     jcenter()
@@ -31,6 +34,11 @@ dependencies {
 
     // Data Format and Conversion
     compile "com.fasterxml.jackson.core:jackson-databind:${jacksonDatabindVersion}"
+
+    // Persistence and ORM
+    compile "org.jetbrains.exposed:exposed:${exposedVersion}"
+    compile "com.h2database:h2:${h2DatabaseVersion}"
+    compile "com.zaxxer:HikariCP:${hikariCPVersion}"
 }
 
 compileKotlin {

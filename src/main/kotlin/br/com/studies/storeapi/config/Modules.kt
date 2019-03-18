@@ -1,5 +1,9 @@
 package br.com.studies.storeapi.config
 
+import br.com.studies.storeapi.domain.services.UserService
+import br.com.studies.storeapi.domain.services.impl.UserServiceImpl
+import br.com.studies.storeapi.resources.repositories.UserRepository
+import br.com.studies.storeapi.resources.repositories.impl.UserRepositoryImpl
 import br.com.studies.storeapi.web.Routes
 import br.com.studies.storeapi.web.controllers.UserController
 import br.com.studies.storeapi.web.controllers.impl.UserControllerImpl
@@ -13,7 +17,9 @@ object Modules {
     }
 
     private val userModule = module {
-        single { UserControllerImpl() as UserController }
+        single { UserRepositoryImpl() as UserRepository }
+        single { UserServiceImpl(get()) as UserService }
+        single { UserControllerImpl(get()) as UserController }
     }
 
     internal val allModules = listOf(
