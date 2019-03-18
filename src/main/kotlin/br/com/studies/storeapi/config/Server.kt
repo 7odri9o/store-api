@@ -2,6 +2,7 @@ package br.com.studies.storeapi.config
 
 import br.com.studies.storeapi.config.Modules.allModules
 import br.com.studies.storeapi.web.Routes
+import br.com.studies.storeapi.web.handlers.Handlers
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
 import io.javalin.Javalin
@@ -27,6 +28,7 @@ class Server : KoinComponent {
             .also { app ->
                 app.contextPath(getProperty("context"))
                 routes.register(app)
+                Handlers.register(app)
                 app.port(getProperty("server_port"))
             }
     }
