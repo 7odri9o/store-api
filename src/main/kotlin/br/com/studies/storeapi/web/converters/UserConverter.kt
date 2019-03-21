@@ -1,6 +1,6 @@
 package br.com.studies.storeapi.web.converters
 
-import br.com.studies.storeapi.commons.EMPTY_OR_NULL_EMAIL_MESSAGE
+import br.com.studies.storeapi.commons.text.EMPTY_OR_NULL_EMAIL_MESSAGE
 import br.com.studies.storeapi.domain.dto.User
 import br.com.studies.storeapi.web.controllers.dto.UserDTO
 

@@ -1,7 +1,7 @@
 package br.com.studies.storeapi.domain.services.impl
 
-import br.com.studies.storeapi.commons.EMAIL_NOT_REGISTERED_PAIR
-import br.com.studies.storeapi.commons.USER_CREATED
+import br.com.studies.storeapi.commons.text.EMAIL_NOT_REGISTERED_PAIR
+import br.com.studies.storeapi.commons.text.USER_CREATED
 import br.com.studies.storeapi.domain.dto.User
 import br.com.studies.storeapi.domain.services.UserService
 import br.com.studies.storeapi.resources.entities.revert

@@ -1,5 +1,7 @@
 package br.com.studies.storeapi.web.controllers.impl
 
+import br.com.studies.storeapi.commons.extensions.getNonNullValue
+import br.com.studies.storeapi.commons.text.EMAIL
 import br.com.studies.storeapi.domain.services.UserService
 import br.com.studies.storeapi.web.controllers.UserController
 import br.com.studies.storeapi.web.controllers.dto.UserDTO
@@ -16,9 +18,7 @@ class UserControllerImpl(
     }
 
     override fun isAlreadyUser(ctx: Context) {
-
-        val email = ctx.queryParam("email", "email")
-        if (email.isNullOrBlank()) throw IllegalArgumentException("Email cannot be null or empty")
+        val email = ctx.queryParam(EMAIL, "").getNonNullValue()
         val response = userService.isAlreadyUser(email)
         ctx.json(response).status(response.statusCode)
     }
