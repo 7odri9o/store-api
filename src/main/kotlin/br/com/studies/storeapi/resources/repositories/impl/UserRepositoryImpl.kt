@@ -10,7 +10,11 @@ import java.util.*
 class UserRepositoryImpl : UserRepository {
 
     override fun save(user: User): UserEntity {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return transaction {
+            UserEntity.new {
+                email = user.email
+            }
+        }
     }
 
     override fun countByEmail(email: String): Int {
