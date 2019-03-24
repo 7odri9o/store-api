@@ -14,9 +14,9 @@ data class Response(
 )
 
 fun convertToResponse(
+    data: Any? = null,
     statusCode: Int,
     message: String,
-    data: Any? = null,
     details: Map<String, String>? = null
 ): Response {
     return Response(
